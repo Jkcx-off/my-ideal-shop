@@ -1,0 +1,71 @@
+.section {
+    padding: 80px 40px;
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.imageContainer {
+    height: 500px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    /* Временный фон для демонстрации */
+    background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ab?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.contentContainer {
+    padding-left: 40px;
+}
+
+.subtitle {
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color); /* Акцентный золотой цвет */
+    margin: 0 0 10px 0;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    color: var(--text-color);
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--secondary-text-color);
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.button {
+    padding: 18px 45px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+    
+.button:hover {
+    transform: scale(1.05);
+}

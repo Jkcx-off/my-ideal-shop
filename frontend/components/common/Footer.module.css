@@ -1,0 +1,55 @@
+.footer {
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-text-color);
+    padding: 60px 40px 0 40px;
+    font-size: 14px;
+}
+
+.content {
+    max-width: 1400px;
+    margin: 0 auto 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.title {
+    font-family: var(--font-heading, "Inter");
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.column p, .column a {
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    transition: color 0.2s;
+}
+
+.column a:hover {
+    color: var(--primary-color);
+}
+
+.socialLinks {
+    display: flex;
+    gap: 15px;
+}
+
+.socialLinks a {
+    font-size: 24px;
+}
+
+.bottomBar {
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 12px;
+}
+
+.bottomBar p {
+    margin: 0;
+}

@@ -1,0 +1,61 @@
+.section {
+    padding: 80px 40px;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+.grid {
+    display: grid;
+    /* Адаптивная сетка, которая будет показывать от 3 до 6 элементов в ряду */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item:hover .circle {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.circle svg {
+    font-size: 56px;
+    color: var(--primary-color);
+}
+
+.name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}

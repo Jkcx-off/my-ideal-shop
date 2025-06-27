@@ -1,0 +1,39 @@
+.strip {
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 30px 40px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    /* Создаем 4 колонки, которые будут адаптироваться под размер экрана */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем контент для адаптивности */
+    gap: 15px;
+    text-align: left;
+}
+
+.iconWrapper {
+    font-size: 32px; /* Размер иконок */
+    color: var(--primary-color); /* Делаем иконки золотыми */
+    flex-shrink: 0; 
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--secondary-text-color);
+    margin: 0;
+    max-width: 200px; /* Ограничиваем ширину текста */
+}

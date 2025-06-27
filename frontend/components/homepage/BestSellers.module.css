@@ -1,0 +1,64 @@
+.section {
+    padding: 80px 40px;
+    background-color: var(--background-color);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.carousel {
+    padding: 10px 50px; /* Даем место для стрелок и теней */
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* Стилизация стрелок Swiper под наш дизайн */
+.carousel :global(.swiper-button-next),
+.carousel :global(.swiper-button-prev) {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.carousel :global(.swiper-button-next):hover,
+.carousel :global(.swiper-button-prev):hover {
+    transform: scale(1.1);
+    color: var(--text-color);
+}
+
+.carousel :global(.swiper-button-next)::after,
+.carousel :global(.swiper-button-prev)::after {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.viewAllContainer {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.viewAllButton {
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.viewAllButton:hover {
+    background-color: var(--text-color);
+    color: var(--surface-color);
+}

@@ -1,0 +1,43 @@
+services:
+  backend:
+    build: ./backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend/my_shop_backend:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_DB=my_shop_db
+      - POSTGRES_USER=my_shop_user
+      - POSTGRES_PASSWORD=my_shop_password
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_DB=my_shop_db
+      - POSTGRES_USER=my_shop_user
+      - POSTGRES_PASSWORD=my_shop_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U my_shop_user -d my_shop_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

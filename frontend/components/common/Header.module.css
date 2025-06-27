@@ -1,0 +1,133 @@
+.header {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* --- Основная (верхняя) панель --- */
+.mainBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+    border-bottom: 1px solid var(--border-color);
+}
+.logo a {
+    font-family: var(--font-heading, "Inter");
+    font-weight: 700;
+    font-size: 24px;
+}
+
+/* --- Нижняя навигация --- */
+.bottomNav {
+    padding: 10px 40px;
+    display: flex;
+    justify-content: center;
+}
+.categoryNav {
+    display: flex;
+    gap: 30px;
+}
+.categoryNav a {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+}
+.categoryNav a:hover {
+    color: var(--text-color);
+}
+.saleLink {
+    color: var(--sale-color) !important;
+}
+    
+/* --- Поиск --- */
+.searchWrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+}
+.searchForm {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+.searchInput {
+    width: 100%;
+    height: 44px;
+    border-radius: 22px;
+    border: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+    padding-left: 50px;
+    font-size: 16px;
+}
+.searchInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+.searchIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-text-color);
+    font-size: 20px;
+    left: 18px;
+}
+
+/* --- Иконки и ссылки пользователя --- */
+.userActions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.iconLink {
+    font-size: 24px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+.iconLink:hover {
+    color: var(--primary-color);
+}
+.iconLink span {
+    font-size: 14px;
+    font-weight: 700;
+}
+.profileLink {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-color);
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+.profileLink:hover {
+    color: var(--primary-color);
+}
+.cart {
+    font-size: 24px;
+    color: var(--text-color);
+    position: relative;
+}
+.cartCounter {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 5px;
+}
