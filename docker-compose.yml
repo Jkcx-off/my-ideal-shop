@@ -2,8 +2,9 @@ services:
   backend:
     build: ./backend
     command: python manage.py runserver 0.0.0.0:8000
+    # ИСПРАВЛЕНО: Теперь мы монтируем всю папку backend, чтобы manage.py был доступен.
     volumes:
-      - ./backend/my_shop_backend:/app
+      - ./backend:/app
     ports:
       - "8000:8000"
     environment:
@@ -15,10 +16,15 @@ services:
         condition: service_healthy
 
   frontend:
-    build: ./frontend
+    build:
+      # ИЗМЕНЕНО: Мы явно указываем, какой Dockerfile использовать для сборки.
+      context: ./frontend
+      dockerfile: Dockerfile.dev
     command: npm run dev
     volumes:
+      # Этот том монтирует ваш локальный код в контейнер для live-reload.
       - ./frontend:/app
+      # Этот том защищает node_modules внутри контейнера от перезаписи.
       - /app/node_modules
     ports:
       - "3000:3000"
